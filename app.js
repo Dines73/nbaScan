@@ -10,5 +10,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //mySQL
+const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "localhost",
+  user: "root",
+  password: "sifra1",
+  database: "NBAScan"
+})
 
 app.listen(port, () => console.log(`Server activated on port ${port}`))
